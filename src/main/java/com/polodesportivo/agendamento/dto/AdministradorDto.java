@@ -5,4 +5,6 @@ public record AdministradorDto(
         String nomeEstabelecimento,
         String cnpj,
         String telefone,
-        String email) {}
+        String email,
+        String senha)
+{}

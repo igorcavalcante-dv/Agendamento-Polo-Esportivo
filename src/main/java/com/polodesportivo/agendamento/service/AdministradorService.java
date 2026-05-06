@@ -6,6 +6,7 @@ import com.polodesportivo.agendamento.repository.AdministradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,7 +25,8 @@ public class AdministradorService {
                 dto.nomeEstabelecimento(),
                 dto.cnpj(),
                 dto.telefone(),
-                dto.email()
+                dto.email(),
+                dto.senha()
         );
 
         return repository.save(novoAdmin);
@@ -32,5 +34,12 @@ public class AdministradorService {
 
     public List<Administrador> listarTodos(){
         return repository.findAll();
+    }
+
+    public void deletar(String id){
+        if(!repository.existsById(id)){
+            throw new RuntimeException("Administrador não encotrado com o ID: " + id);
+        }
+        repository.deleteAllById(Collections.singleton(id));
     }
 }

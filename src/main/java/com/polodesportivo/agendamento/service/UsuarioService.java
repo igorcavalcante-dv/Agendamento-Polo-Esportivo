@@ -33,4 +33,11 @@ public class UsuarioService {
     public List<Usuario> listarTodos(){
         return repository.findAll();
     }
+
+    public void deletarUsuario(String id){
+        if(!repository.existsById(id)){
+            throw new RuntimeException("Usuário não encotrado");
+        }
+        repository.deleteById(id);
+    }
 }

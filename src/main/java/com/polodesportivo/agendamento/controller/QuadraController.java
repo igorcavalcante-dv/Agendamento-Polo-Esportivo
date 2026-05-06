@@ -26,4 +26,10 @@ public class QuadraController {
     public ResponseEntity<List<Quadra>> listar(){
         return ResponseEntity.ok(service.listarTodos());
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deletar(@PathVariable String id){
+        service.deletarQuadra(id);
+        return ResponseEntity.noContent().build();
+    }
 }

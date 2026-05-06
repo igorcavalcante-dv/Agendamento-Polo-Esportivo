@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/admin")
 public class AdministradorController {
 
     @Autowired
@@ -25,5 +25,11 @@ public class AdministradorController {
     @GetMapping
     public ResponseEntity<List<Administrador>> listar(){
         return ResponseEntity.ok(service.listarTodos());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Administrador> deletarAdmin(@PathVariable String id){
+        service.deletar(id);
+        return ResponseEntity.noContent().build();
     }
 }

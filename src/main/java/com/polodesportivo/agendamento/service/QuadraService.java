@@ -30,4 +30,11 @@ public class QuadraService {
     public List<Quadra> listarTodos(){
         return repository.findAll();
     }
+
+    public void deletarQuadra(String id){
+        if(!repository.existsById(id)){
+            throw new RuntimeException("Quadra não encontrada");
+        }
+        repository.deleteById(id);
+    }
 }

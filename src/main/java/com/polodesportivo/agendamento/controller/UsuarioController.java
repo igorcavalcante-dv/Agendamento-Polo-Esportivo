@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     @Autowired
@@ -27,4 +27,9 @@ public class UsuarioController {
         return ResponseEntity.ok(service.listarTodos());
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deletar(@PathVariable String id){
+        service.deletarUsuario(id);
+        return ResponseEntity.noContent().build();
+    }
 }

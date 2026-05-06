@@ -5,13 +5,10 @@ import com.polodesportivo.agendamento.entity.Agendamento;
 import com.polodesportivo.agendamento.service.AgendamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/agendamentos")
+@RequestMapping("/agendamentos")
 public class AgendamentoController {
 
     @Autowired
@@ -20,5 +17,11 @@ public class AgendamentoController {
     @PostMapping
     public ResponseEntity<Agendamento> agendar(@RequestBody AgendamentoDto dto){
         return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> cancelar(@PathVariable String id){
+        service.cancelar(id);
+        return ResponseEntity.noContent().build();
     }
 }

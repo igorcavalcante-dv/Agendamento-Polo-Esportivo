@@ -5,10 +5,7 @@ import com.polodesportivo.agendamento.entity.Pagamento;
 import com.polodesportivo.agendamento.service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pagamentos")
@@ -19,5 +16,11 @@ public class PagamentoController {
     @PostMapping
     public ResponseEntity<Pagamento> criar(@RequestBody PagamentoDto dto){
         return ResponseEntity.ok(service.criar(dto));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> estornarPagamento(@PathVariable String id){
+        service.deletaPagamento(id);
+        return ResponseEntity.noContent().build();
     }
 }

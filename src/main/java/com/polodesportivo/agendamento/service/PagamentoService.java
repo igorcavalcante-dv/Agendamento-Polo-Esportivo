@@ -18,4 +18,9 @@ public class PagamentoService {
         );
         return repository.save(pagamento);
     }
+
+    public void deletaPagamento(String id){
+        repository.deleteById(id);
+    }
+
 }
