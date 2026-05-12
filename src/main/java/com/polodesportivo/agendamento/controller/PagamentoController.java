@@ -19,7 +19,7 @@ public class PagamentoController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> estornarPagamento(@PathVariable String id){
+    public ResponseEntity<Void> estornarPagamento(@PathVariable Long id){
         service.deletaPagamento(id);
         return ResponseEntity.noContent().build();
     }

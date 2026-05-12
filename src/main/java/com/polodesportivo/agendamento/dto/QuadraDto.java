@@ -7,5 +7,5 @@ public record QuadraDto(
         String nome,
 
         @NotBlank(message = "O ID da modalidade é obrigatoria")
-        String modalidadeId
+        Long modalidadeId
 ) {}

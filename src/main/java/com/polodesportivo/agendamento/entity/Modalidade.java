@@ -8,7 +8,7 @@ public class Modalidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private Long id;
 
     private String nome;
     private double valorHora;
@@ -23,11 +23,11 @@ public class Modalidade {
         this.valorEquipamento = valorEquipamento;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
