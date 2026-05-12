@@ -11,7 +11,7 @@ public class Agendamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
@@ -53,11 +53,11 @@ public class Agendamento {
         return valorBase + valorAdicional;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -28,7 +28,7 @@ public class AdministradorController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Administrador> deletarAdmin(@PathVariable String id){
+    public ResponseEntity<Administrador> deletarAdmin(@PathVariable Long id){
         service.deletar(id);
         return ResponseEntity.noContent().build();
     }

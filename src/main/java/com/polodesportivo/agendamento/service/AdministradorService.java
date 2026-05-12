@@ -36,7 +36,7 @@ public class AdministradorService {
         return repository.findAll();
     }
 
-    public void deletar(String id){
+    public void deletar(Long id){
         if(!repository.existsById(id)){
             throw new RuntimeException("Administrador não encotrado com o ID: " + id);
         }

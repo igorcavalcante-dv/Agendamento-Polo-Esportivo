@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public record AgendamentoDto(
-        String usuarioId,
-        String quadraId,
+        Long usuarioId,
+        Long quadraId,
         LocalDate data,
         LocalTime hora,
         int quantidadePessoas,

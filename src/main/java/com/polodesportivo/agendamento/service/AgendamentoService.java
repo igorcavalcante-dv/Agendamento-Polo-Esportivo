@@ -33,7 +33,7 @@ public class AgendamentoService {
         return repository.findAll();
     }
 
-    public void cancelar(String id) {
+    public void cancelar(Long id) {
         if (!repository.existsById(id)) {
             throw new RuntimeException("Agendamento não encontrado");
         }

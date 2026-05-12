@@ -28,7 +28,7 @@ public class QuadraController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deletar(@PathVariable String id){
+    public ResponseEntity<Void> deletar(@PathVariable Long id){
         service.deletarQuadra(id);
         return ResponseEntity.noContent().build();
     }
