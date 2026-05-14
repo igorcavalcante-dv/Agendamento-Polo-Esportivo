@@ -10,8 +10,8 @@ import org.hibernate.validator.constraints.br.CPF;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @NotBlank(message = "O nome é obrigatorio")
     private String nome;
@@ -40,11 +40,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -8,8 +8,8 @@ import jakarta.validation.constraints.NotBlank;
 public class Pagamento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @NotBlank(message = "O método de pagamento deve ser informado")
     private String metodo;
@@ -24,11 +24,11 @@ public class Pagamento {
         this.confirmado = confirmado;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

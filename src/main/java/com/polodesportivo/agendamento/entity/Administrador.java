@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Administrador {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String nomeDono;
     private String nomeEstabelecimento;
@@ -34,11 +34,11 @@ public class Administrador {
         this.senha = senha;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Modalidade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String nome;
     private double valorHora;
@@ -23,11 +23,11 @@ public class Modalidade {
         this.valorEquipamento = valorEquipamento;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

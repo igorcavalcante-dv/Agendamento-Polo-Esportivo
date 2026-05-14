@@ -10,8 +10,8 @@ import java.time.LocalTime;
 public class Agendamento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
@@ -53,11 +53,11 @@ public class Agendamento {
         return valorBase + valorAdicional;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

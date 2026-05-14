@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Quadra {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(nullable = false)
     private String nome;
@@ -25,11 +25,11 @@ public class Quadra {
         this.modalidade = modalidade;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
